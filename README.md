@@ -32,7 +32,7 @@ techprobe scan example.com
 techprobe scan site1.com site2.com site3.com
 
 # Output as JSON
-techprobe scan -f json example.com
+techprobe scan -F json example.com
 
 # Save results to file
 techprobe scan -o results.json example.com

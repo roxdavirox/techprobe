@@ -31,7 +31,7 @@ enum Commands {
         #[arg(short, long)]
         output: Option<PathBuf>,
 
-        #[arg(short = 'f', long, default_value = "text")]
+        #[arg(short = 'F', long, default_value = "text")]
         format: OutputFormat,
     },
     List {
