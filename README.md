@@ -7,6 +7,7 @@ Detects technologies used on websites by analyzing HTTP headers, HTML content, m
 ## Features
 
 - **Fast**: Written in Rust with async I/O for high-performance scanning
+- **Chrome Extension**: Browser extension for real-time detection
 - **Compatible**: Uses the same fingerprint format as Wappalyzer
 - **Multiple output formats**: Text, JSON, and CSV
 - **Concurrent scanning**: Scan multiple URLs simultaneously
@@ -14,11 +15,22 @@ Detects technologies used on websites by analyzing HTTP headers, HTML content, m
 
 ## Installation
 
+### CLI (Rust)
+
 ```bash
 cargo build --release
 ```
 
 The binary will be at `target/release/techprobe`.
+
+### Chrome Extension
+
+1. Open `chrome://extensions/`
+2. Enable "Developer mode"
+3. Click "Load unpacked"
+4. Select the `extension/` folder
+
+The extension will detect technologies on any website you visit and show a badge with the count.
 
 ## Usage
 
@@ -143,12 +155,13 @@ Edit `data/technologies.json` and add a new entry:
 
 | Feature | techprobe | Wappalyzer |
 |---------|-----------|------------|
-| Language | Rust | JavaScript |
+| Language | Rust + JS | JavaScript |
 | Performance | High | Medium |
 | CLI | Native | Node.js |
-| Browser Extension | No | Yes |
+| Browser Extension | Yes | Yes |
 | API | CLI-based | Web API |
 | Fingerprint Format | Compatible | Original |
+| Open Source | MIT | GPL-3.0 |
 
 ## License
 
