@@ -1,0 +1,859 @@
+{
+  "WordPress": {
+    "description": "WordPress is a free and open-source content management system (CMS) based on PHP and MySQL.",
+    "cats": [1, 11],
+    "website": "https://wordpress.org",
+    "icon": "WordPress.svg",
+    "cpe": "cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "implies": ["PHP", "MySQL"],
+    "headers": {
+      "x-powered-by": "WordPress",
+      "link": "rel=.alternate.; type=.application/json.; wp-json"
+    },
+    "meta": {
+      "generator": "WordPress"
+    },
+    "cookies": {
+      "wordpress_": "",
+      "wp-settings-": ""
+    },
+    "html": [
+      "<link[^>]+wp-content",
+      "<link[^>]+wp-includes"
+    ],
+    "scriptSrc": [
+      "wp-includes/.+\\.js\\?ver=([\\d.]+)\\;version:\\1",
+      "wp-content/.+\\.js\\?ver=([\\d.]+)\\;version:\\1"
+    ],
+    "dom": {
+      "meta[name='generator'][content^='WordPress']": {
+        "attributes": {
+          "content": "WordPress ([\\d.]+)\\;version:\\1"
+        }
+      }
+    }
+  },
+  "Joomla": {
+    "description": "Joomla is a free and open-source content management system for publishing web content.",
+    "cats": [1],
+    "website": "https://www.joomla.org",
+    "icon": "Joomla.svg",
+    "cpe": "cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "implies": ["PHP"],
+    "meta": {
+      "generator": "Joomla"
+    },
+    "headers": {
+      "x-content-encoded-by": "Joomla"
+    },
+    "cookies": {
+      "joomla_": ""
+    },
+    "html": [
+      "<div[^>]+id=.component-area",
+      "/media/jui/"
+    ]
+  },
+  "Drupal": {
+    "description": "Drupal is a free and open-source web content management framework written in PHP.",
+    "cats": [1],
+    "website": "https://www.drupal.org",
+    "icon": "Drupal.svg",
+    "cpe": "cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "implies": ["PHP"],
+    "headers": {
+      "x-generator": "Drupal",
+      "x-drupal-cache": "",
+      "x-drupal-dynamic-cache": ""
+    },
+    "meta": {
+      "generator": "Drupal"
+    },
+    "cookies": {
+      "SSESS": "",
+      "Drupal.": ""
+    },
+    "html": [
+      "<link[^>]+sites/default/files",
+      "jQuery\\.extend\\(Drupal\\.settings"
+    ],
+    "scriptSrc": [
+      "drupal\\.js"
+    ]
+  },
+  "Shopify": {
+    "description": "Shopify is a commerce platform that allows anyone to set up an online store and sell their products.",
+    "cats": [1, 6],
+    "website": "https://www.shopify.com",
+    "icon": "Shopify.svg",
+    "saas": true,
+    "headers": {
+      "x-shopify-stage": "",
+      "x-shopid": "",
+      "x-sorting-hat-shopid": "",
+      "x-storefront-renderer-rendered": ""
+    },
+    "meta": {
+      "shopify-checkout-api-token": ""
+    },
+    "cookies": {
+      "_shopify_": "",
+      "cart_sig": "",
+      "_shopify_y": ""
+    },
+    "html": [
+      "<link[^>]+cdn\\.shopify\\.com"
+    ],
+    "scriptSrc": [
+      "cdn\\.shopify\\.com"
+    ]
+  },
+  "Wix": {
+    "description": "Wix is a cloud-based web development platform that allows users to create HTML5 websites.",
+    "cats": [1],
+    "website": "https://www.wix.com",
+    "icon": "Wix.svg",
+    "saas": true,
+    "html": [
+      "<link[^>]+static\\.wixstatic\\.com",
+      "wix\\.com"
+    ],
+    "scriptSrc": [
+      "static\\.wixstatic\\.com",
+      "wix\\.com"
+    ],
+    "headers": {
+      "x-wix-request-id": ""
+    }
+  },
+  "Squarespace": {
+    "description": "Squarespace is a website building and hosting platform.",
+    "cats": [1],
+    "website": "https://www.squarespace.com",
+    "icon": "Squarespace.svg",
+    "saas": true,
+    "html": [
+      "<!-- This is Squarespace",
+      "squarespace\\.com"
+    ],
+    "scriptSrc": [
+      "squarespace\\.com",
+      "squarespace-cdn\\.com"
+    ],
+    "meta": {
+      "generator": "Squarespace"
+    }
+  },
+  "React": {
+    "description": "React is a JavaScript library for building user interfaces.",
+    "cats": [12],
+    "website": "https://reactjs.org",
+    "icon": "React.svg",
+    "oss": true,
+    "js": {
+      "React.version": "",
+      "__REACT_DEVTOOLS_GLOBAL_HOOK__": "",
+      "ReactDOM.version": ""
+    },
+    "html": [
+      "<[^>]+data-reactroot",
+      "react\\.production\\.min\\.js"
+    ],
+    "scriptSrc": [
+      "react(?:\\.min)?\\.js",
+      "react-dom(?:\\.min)?\\.js"
+    ]
+  },
+  "Vue.js": {
+    "description": "Vue.js is a progressive JavaScript framework for building user interfaces.",
+    "cats": [12],
+    "website": "https://vuejs.org",
+    "icon": "Vue.js.svg",
+    "oss": true,
+    "js": {
+      "Vue.version": "",
+      "__vue__": ""
+    },
+    "html": [
+      "<[^>]+data-v-",
+      "data-v-[a-f0-9]+"
+    ],
+    "scriptSrc": [
+      "vue(?:\\.min)?\\.js",
+      "vue(?:\\.runtime)?(?:\\.min)?\\.js"
+    ]
+  },
+  "Angular": {
+    "description": "Angular is a platform for building mobile and desktop web applications.",
+    "cats": [12],
+    "website": "https://angular.io",
+    "icon": "Angular.svg",
+    "oss": true,
+    "js": {
+      "ng.version": "",
+      "ng.probe": "",
+      "getAllAngularRootElements": ""
+    },
+    "html": [
+      "<[^>]+ng-version",
+      "ng-version=.([\\d.]+)"
+    ],
+    "scriptSrc": [
+      "angular(?:\\.min)?\\.js",
+      "angular-([\\d.]+)\\.js\\;version:\\1"
+    ]
+  },
+  "jQuery": {
+    "description": "jQuery is a fast, small, and feature-rich JavaScript library.",
+    "cats": [12],
+    "website": "https://jquery.com",
+    "icon": "jQuery.svg",
+    "oss": true,
+    "js": {
+      "jQuery.fn.jquery": "\\;version:\\1"
+    },
+    "scriptSrc": [
+      "jquery[/-]([\\d.]+)\\.js\\;version:\\1",
+      "jquery\\.min\\.js"
+    ]
+  },
+  "Next.js": {
+    "description": "Next.js is a React framework for production.",
+    "cats": [12, 18],
+    "website": "https://nextjs.org",
+    "icon": "Next.js.svg",
+    "oss": true,
+    "implies": ["React"],
+    "headers": {
+      "x-powered-by": "Next\\.js"
+    },
+    "html": [
+      "__NEXT_DATA__",
+      "<[^>]+__next"
+    ],
+    "js": {
+      "__NEXT_DATA__": "",
+      "__next": ""
+    }
+  },
+  "Nuxt.js": {
+    "description": "Nuxt.js is a Vue.js framework for building server-side rendered applications.",
+    "cats": [12, 18],
+    "website": "https://nuxtjs.org",
+    "icon": "Nuxt.js.svg",
+    "oss": true,
+    "implies": ["Vue.js"],
+    "html": [
+      "<[^>]+__nuxt",
+      "__NUXT__"
+    ],
+    "js": {
+      "__NUXT__": "",
+      "$nuxt": ""
+    }
+  },
+  "Nginx": {
+    "description": "Nginx is a web server that can also be used as a reverse proxy, load balancer, and HTTP cache.",
+    "cats": [20, 42],
+    "website": "https://nginx.org",
+    "icon": "Nginx.svg",
+    "cpe": "cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "server": "nginx(?:/([\\d.]+))?\\;version:\\1"
+    }
+  },
+  "Apache": {
+    "description": "Apache HTTP Server is a free and open-source web server.",
+    "cats": [20],
+    "website": "https://httpd.apache.org",
+    "icon": "Apache.svg",
+    "cpe": "cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "server": "Apache(?:/([\\d.]+))?\\;version:\\1"
+    }
+  },
+  "Microsoft IIS": {
+    "description": "Internet Information Services is an extensible web server created by Microsoft.",
+    "cats": [20],
+    "website": "https://www.iis.net",
+    "icon": "Microsoft IIS.svg",
+    "cpe": "cpe:2.3:a:microsoft:iis:*:*:*:*:*:*:*:*",
+    "headers": {
+      "server": "Microsoft-IIS(?:/([\\d.]+))?\\;version:\\1"
+    }
+  },
+  "LiteSpeed": {
+    "description": "LiteSpeed Web Server is a high-performance web server.",
+    "cats": [20],
+    "website": "https://www.litespeedtech.com",
+    "icon": "LiteSpeed.svg",
+    "headers": {
+      "server": "LiteSpeed"
+    }
+  },
+  "Cloudflare": {
+    "description": "Cloudflare is a web infrastructure and security company.",
+    "cats": [29, 42, 16],
+    "website": "https://www.cloudflare.com",
+    "icon": "Cloudflare.svg",
+    "saas": true,
+    "headers": {
+      "server": "cloudflare",
+      "cf-ray": "",
+      "cf-cache-status": ""
+    }
+  },
+  "PHP": {
+    "description": "PHP is a popular general-purpose scripting language that powers everything from your blog to the most popular websites in the world.",
+    "cats": [25],
+    "website": "https://www.php.net",
+    "icon": "PHP.svg",
+    "cpe": "cpe:2.3:a:php:php:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "x-powered-by": "php/?([\\d.]+)\\;version:\\1",
+      "server": "php/?([\\d.]+)\\;version:\\1"
+    }
+  },
+  "Python": {
+    "description": "Python is a high-level, general-purpose programming language.",
+    "cats": [25],
+    "website": "https://www.python.org",
+    "icon": "Python.svg",
+    "cpe": "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "server": "Python(?:/([\\d.]+))?\\;version:\\1",
+      "x-powered-by": "Python"
+    }
+  },
+  "Node.js": {
+    "description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    "cats": [25],
+    "website": "https://nodejs.org",
+    "icon": "Node.js.svg",
+    "cpe": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "x-powered-by": "Express",
+      "server": "Node\\.js"
+    }
+  },
+  "Express": {
+    "description": "Fast, unopinionated, minimalist web framework for Node.js.",
+    "cats": [18],
+    "website": "https://expressjs.com",
+    "icon": "Express.svg",
+    "oss": true,
+    "implies": ["Node.js"],
+    "headers": {
+      "x-powered-by": "Express"
+    }
+  },
+  "Django": {
+    "description": "Django is a high-level Python Web framework that encourages rapid development.",
+    "cats": [18],
+    "website": "https://www.djangoproject.com",
+    "icon": "Django.svg",
+    "cpe": "cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "implies": ["Python"],
+    "headers": {
+      "x-frame-options": "SAMEORIGIN",
+      "vary": "Cookie"
+    },
+    "cookies": {
+      "csrftoken": "",
+      "sessionid": ""
+    }
+  },
+  "Flask": {
+    "description": "Flask is a lightweight WSGI web application framework in Python.",
+    "cats": [18],
+    "website": "https://flask.palletsprojects.com",
+    "icon": "Flask.svg",
+    "oss": true,
+    "implies": ["Python"],
+    "headers": {
+      "server": "Werkzeug/?([\\d.]+)\\;version:\\1"
+    }
+  },
+  "Laravel": {
+    "description": "Laravel is a web application framework with expressive, elegant syntax.",
+    "cats": [18],
+    "website": "https://laravel.com",
+    "icon": "Laravel.svg",
+    "oss": true,
+    "implies": ["PHP"],
+    "cookies": {
+      "laravel_session": ""
+    },
+    "html": [
+      "<[^>]+laravel"
+    ]
+  },
+  "Ruby on Rails": {
+    "description": "Ruby on Rails is a server-side web application framework written in Ruby.",
+    "cats": [18],
+    "website": "https://rubyonrails.org",
+    "icon": "Ruby on Rails.svg",
+    "cpe": "cpe:2.3:a:rubyonrails:rails:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "implies": ["Ruby"],
+    "headers": {
+      "x-powered-by": "Phusion Passenger",
+      "server": "Phusion Passenger"
+    },
+    "meta": {
+      "csrf-param": "authenticity_token"
+    },
+    "cookies": {
+      "_session_id": ""
+    }
+  },
+  "Ruby": {
+    "description": "A dynamic, open source programming language with a focus on simplicity and productivity.",
+    "cats": [25],
+    "website": "https://www.ruby-lang.org",
+    "icon": "Ruby.svg",
+    "cpe": "cpe:2.3:a:ruby-lang:ruby:*:*:*:*:*:*:*:*",
+    "oss": true,
+    "headers": {
+      "server": "WEBrick/?([\\d.]+)\\;version:\\1",
+      "x-powered-by": "mod_rack"
+    }
+  },
+  "Java": {
+    "description": "Java is a high-level, class-based, object-oriented programming language.",
+    "cats": [25],
+    "website": "https://www.java.com",
+    "icon": "Java.svg",
+    "cpe": "cpe:2.3:a:oracle:java:*:*:*:*:*:*:*:*",
+    "headers": {
+      "server": "Apache-Coyote",
+      "x-powered-by": "Servlet"
+    }
+  },
+  "Spring": {
+    "description": "The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications.",
+    "cats": [18],
+    "website": "https://spring.io",
+    "icon": "Spring.svg",
+    "oss": true,
+    "implies": ["Java"],
+    "headers": {
+      "x-application-context": ""
+    }
+  },
+  "ASP.NET": {
+    "description": "ASP.NET is an open-source, server-side web-application framework designed for web development.",
+    "cats": [18],
+    "website": "https://dotnet.microsoft.com/apps/aspnet",
+    "icon": "ASP.NET.svg",
+    "cpe": "cpe:2.3:a:microsoft:asp.net:*:*:*:*:*:*:*:*",
+    "implies": ["Microsoft IIS"],
+    "headers": {
+      "x-powered-by": "ASP\\.NET",
+      "x-aspnet-version": ""
+    },
+    "cookies": {
+      "ASP.NET_SessionId": ""
+    }
+  },
+  "Google Analytics": {
+    "description": "Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.",
+    "cats": [10],
+    "website": "https://analytics.google.com",
+    "icon": "Google Analytics.svg",
+    "saas": true,
+    "js": {
+      "ga": "",
+      "gtag": "",
+      "_gaq": "",
+      "GoogleAnalyticsObject": ""
+    },
+    "scriptSrc": [
+      "google-analytics\\.com/analytics\\.js",
+      "googletagmanager\\.com/gtag/js"
+    ],
+    "cookies": {
+      "_ga": "",
+      "_gid": "",
+      "_gat": ""
+    }
+  },
+  "Google Tag Manager": {
+    "description": "Google Tag Manager is a tag management system that allows you to quickly and easily update tags and code snippets.",
+    "cats": [48],
+    "website": "https://tagmanager.google.com",
+    "icon": "Google Tag Manager.svg",
+    "saas": true,
+    "js": {
+      "google_tag_manager": "",
+      "dataLayer": ""
+    },
+    "scriptSrc": [
+      "googletagmanager\\.com/gtm\\.js"
+    ]
+  },
+  "Facebook Pixel": {
+    "description": "The Facebook Pixel is a piece of code for your website that lets you measure, optimize and build audiences for your ad campaigns.",
+    "cats": [10, 30],
+    "website": "https://www.facebook.com/business/tools/meta-pixel",
+    "icon": "Facebook.svg",
+    "saas": true,
+    "js": {
+      "fbq": "",
+      "_fbq": ""
+    },
+    "scriptSrc": [
+      "connect\\.facebook\\.net/.+/fbevents\\.js"
+    ]
+  },
+  "Hotjar": {
+    "description": "Hotjar is a behavior analytics tool that helps you understand how users interact with your website.",
+    "cats": [10],
+    "website": "https://www.hotjar.com",
+    "icon": "Hotjar.svg",
+    "saas": true,
+    "js": {
+      "hj": "",
+      "hj.q": "",
+      "_hjSettings": ""
+    },
+    "scriptSrc": [
+      "static\\.hotjar\\.com/c/hotjar"
+    ]
+  },
+  "Bootstrap": {
+    "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.",
+    "cats": [18],
+    "website": "https://getbootstrap.com",
+    "icon": "Bootstrap.svg",
+    "oss": true,
+    "html": [
+      "<link[^>]+bootstrap[^>]+\\.css",
+      "<link[^>]+bootstrap[^>]+\\.min\\.css"
+    ],
+    "scriptSrc": [
+      "bootstrap(?:\\.min)?\\.js",
+      "bootstrap(?:\\.bundle)?(?:\\.min)?\\.js"
+    ],
+    "css": [
+      "bootstrap(?:\\.min)?\\.css"
+    ]
+  },
+  "Tailwind CSS": {
+    "description": "A utility-first CSS framework for rapidly building custom designs.",
+    "cats": [18],
+    "website": "https://tailwindcss.com",
+    "icon": "Tailwind CSS.svg",
+    "oss": true,
+    "html": [
+      "<link[^>]+tailwindcss",
+      "tailwind\\.css"
+    ],
+    "css": [
+      "tailwind\\.css",
+      "tw-"
+    ]
+  },
+  "Font Awesome": {
+    "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
+    "cats": [17],
+    "website": "https://fontawesome.com",
+    "icon": "Font Awesome.svg",
+    "html": [
+      "<link[^>]+font-awesome",
+      "<link[^>]+fontawesome"
+    ],
+    "css": [
+      "font-awesome",
+      "fontawesome"
+    ]
+  },
+  "Google Fonts": {
+    "description": "Google Fonts is a library of 1000+ free licensed font families.",
+    "cats": [17],
+    "website": "https://fonts.google.com",
+    "icon": "Google Fonts.svg",
+    "saas": true,
+    "html": [
+      "<link[^>]+fonts\\.googleapis\\.com"
+    ],
+    "css": [
+      "fonts\\.googleapis\\.com"
+    ]
+  },
+  "Webpack": {
+    "description": "Webpack is a static module bundler for modern JavaScript applications.",
+    "cats": [39],
+    "website": "https://webpack.js.org",
+    "icon": "Webpack.svg",
+    "oss": true,
+    "js": {
+      "webpackJsonp": "",
+      "__webpack_require__": "",
+      "webpackChunk": ""
+    },
+    "html": [
+      "__webpack_require__",
+      "webpackJsonp"
+    ]
+  },
+  "Vite": {
+    "description": "Vite is a fast build tool for modern web projects.",
+    "cats": [39],
+    "website": "https://vitejs.dev",
+    "icon": "Vite.svg",
+    "oss": true,
+    "html": [
+      "/@vite/client",
+      "vite\\.js"
+    ],
+    "scriptSrc": [
+      "/@vite/client"
+    ]
+  },
+  "ESLint": {
+    "description": "ESLint is a pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.",
+    "cats": [39],
+    "website": "https://eslint.org",
+    "icon": "ESLint.svg",
+    "oss": true,
+    "html": [
+      "eslint"
+    ]
+  },
+  "Git": {
+    "description": "Git is a free and open source distributed version control system.",
+    "cats": [87],
+    "website": "https://git-scm.com",
+    "icon": "Git.svg",
+    "oss": true
+  },
+  "GitHub": {
+    "description": "GitHub is a provider of Internet hosting for software development and version control using Git.",
+    "cats": [87, 40],
+    "website": "https://github.com",
+    "icon": "GitHub.svg",
+    "saas": true,
+    "headers": {
+      "x-github-request-id": ""
+    }
+  },
+  "Docker": {
+    "description": "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.",
+    "cats": [41],
+    "website": "https://www.docker.com",
+    "icon": "Docker.svg",
+    "oss": true,
+    "headers": {
+      "server": "Docker"
+    }
+  },
+  "Kubernetes": {
+    "description": "Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management.",
+    "cats": [41],
+    "website": "https://kubernetes.io",
+    "icon": "Kubernetes.svg",
+    "oss": true,
+    "headers": {
+      "server": "kubernetes"
+    }
+  },
+  "Amazon Web Services": {
+    "description": "Amazon Web Services is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs.",
+    "cats": [55],
+    "website": "https://aws.amazon.com",
+    "icon": "Amazon Web Services.svg",
+    "saas": true,
+    "headers": {
+      "server": "AmazonS3",
+      "x-amz-request-id": "",
+      "x-amz-cf-id": ""
+    }
+  },
+  "Google Cloud": {
+    "description": "Google Cloud Platform is a suite of cloud computing services.",
+    "cats": [55],
+    "website": "https://cloud.google.com",
+    "icon": "Google Cloud.svg",
+    "saas": true,
+    "headers": {
+      "server": "GSE",
+      "x-cloud-trace-context": ""
+    }
+  },
+  "Microsoft Azure": {
+    "description": "Microsoft Azure is a cloud computing service for building, testing, deploying, and managing applications.",
+    "cats": [55],
+    "website": "https://azure.microsoft.com",
+    "icon": "Microsoft Azure.svg",
+    "saas": true,
+    "headers": {
+      "x-azure-ref": "",
+      "x-ms-request-id": ""
+    }
+  },
+  "Netlify": {
+    "description": "Netlify is a web developer platform that builds, deploys, and manages modern web projects.",
+    "cats": [55, 42],
+    "website": "https://www.netlify.com",
+    "icon": "Netlify.svg",
+    "saas": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": ""
+    }
+  },
+  "Vercel": {
+    "description": "Vercel is a cloud platform for static sites and serverless functions.",
+    "cats": [55],
+    "website": "https://vercel.com",
+    "icon": "Vercel.svg",
+    "saas": true,
+    "headers": {
+      "server": "Vercel",
+      "x-vercel-id": ""
+    }
+  },
+  "Gatsby": {
+    "description": "Gatsby is a React-based open-source framework for creating websites and apps.",
+    "cats": [43],
+    "website": "https://www.gatsbyjs.com",
+    "icon": "Gatsby.svg",
+    "oss": true,
+    "implies": ["React"],
+    "html": [
+      "<div[^>]+id=.___gatsby",
+      "gatsby"
+    ],
+    "js": {
+      "___webpackCompilationHash": ""
+    }
+  },
+  "Hugo": {
+    "description": "Hugo is one of the most popular open-source static site generators.",
+    "cats": [43],
+    "website": "https://gohugo.io",
+    "icon": "Hugo.svg",
+    "oss": true,
+    "meta": {
+      "generator": "Hugo"
+    }
+  },
+  "Jekyll": {
+    "description": "Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites.",
+    "cats": [43],
+    "website": "https://jekyllrb.com",
+    "icon": "Jekyll.svg",
+    "oss": true,
+    "meta": {
+      "generator": "Jekyll"
+    }
+  },
+  "Stripe": {
+    "description": "Stripe is a payment processing platform for internet businesses.",
+    "cats": [65],
+    "website": "https://stripe.com",
+    "icon": "Stripe.svg",
+    "saas": true,
+    "js": {
+      "Stripe": "",
+      "Stripe.version": ""
+    },
+    "scriptSrc": [
+      "js\\.stripe\\.com"
+    ]
+  },
+  "PayPal": {
+    "description": "PayPal is an online payment system that supports online money transfers.",
+    "cats": [65],
+    "website": "https://www.paypal.com",
+    "icon": "PayPal.svg",
+    "saas": true,
+    "scriptSrc": [
+      "paypalobjects\\.com",
+      "paypal\\.com"
+    ]
+  },
+  "reCAPTCHA": {
+    "description": "reCAPTCHA is a free service from Google that helps protect websites from spam and abuse.",
+    "cats": [16],
+    "website": "https://www.google.com/recaptcha",
+    "icon": "reCAPTCHA.svg",
+    "saas": true,
+    "js": {
+      "grecaptcha": ""
+    },
+    "scriptSrc": [
+      "google\\.com/recaptcha",
+      "gstatic\\.com/recaptcha"
+    ]
+  },
+  "Sentry": {
+    "description": "Sentry is an open-source error tracking tool that helps developers monitor and fix crashes in real time.",
+    "cats": [10],
+    "website": "https://sentry.io",
+    "icon": "Sentry.svg",
+    "saas": true,
+    "js": {
+      "Sentry": "",
+      "__SENTRY__": ""
+    },
+    "scriptSrc": [
+      "browser\\.sentry-cdn\\.com",
+      "sentry\\.io"
+    ]
+  },
+  "Intercom": {
+    "description": "Intercom is a customer messaging platform.",
+    "cats": [59],
+    "website": "https://www.intercom.com",
+    "icon": "Intercom.svg",
+    "saas": true,
+    "js": {
+      "Intercom": "",
+      "intercomSettings": ""
+    },
+    "scriptSrc": [
+      "widget\\.intercom\\.io",
+      "intercom\\.io"
+    ]
+  },
+  "Drift": {
+    "description": "Drift is a conversational marketing platform.",
+    "cats": [59],
+    "website": "https://www.drift.com",
+    "icon": "Drift.svg",
+    "saas": true,
+    "js": {
+      "drift": "",
+      "driftt": ""
+    },
+    "scriptSrc": [
+      "js\\.driftt\\.com"
+    ]
+  },
+  "Mailchimp": {
+    "description": "Mailchimp is an all-in-one Marketing Platform for small business.",
+    "cats": [30, 76],
+    "website": "https://mailchimp.com",
+    "icon": "Mailchimp.svg",
+    "saas": true,
+    "html": [
+      "mailchimp\\.com",
+      "list-manage\\.com"
+    ],
+    "scriptSrc": [
+      "list-manage\\.com",
+      "mailchimp\\.com"
+    ]
+  }
+}
